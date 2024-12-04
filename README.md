@@ -20,7 +20,7 @@
 
 LLM benchmarks are a set of standardized tests designed to evaluate the performance of LLMs on various tasks, such as reasoning and comprehension, and utilize specific scorers or metrics to measure these abilities.
 
-![alt text](image-2.png)
+<!-- ![alt text](image-2.png) -->
 
 ### Scenario, Task, Benchmark Dataset, and Metric
 
@@ -90,3 +90,63 @@ A scenario refers to a broad set of contexts, settings, or conditions under whic
 | HellaSwag                                       | 2019          | [Paper](https://arxiv.org/abs/1905.07830) ∙ [Code](https://github.com/rowanz/hellaswag) ∙ [Dataset](https://huggingface.co/datasets/Rowan/hellaswag)                                                                                                        | Evaluates commonsense reasoning with next-sentence prediction in challenging contexts.   |
 | BIG-Bench Hard (Beyond the Imitation Game)      | 2022          | [Paper](https://arxiv.org/abs/2210.09261) ∙ [Code](https://github.com/suzgunmirac/BIG-Bench-Hard) ∙ [Dataset](https://huggingface.co/datasets/maveriq/bigbenchhard)                                                                                         | Measures models' performance on complex reasoning tasks beyond standard benchmarks.      |
 | GSM8k                                           | 2021          | [Paper](https://arxiv.org/abs/2110.14168) ∙ [Code](https://github.com/openai/grade-school-math) ∙ [Dataset](https://github.com/openai/grade-school-math) ∙ [Demo Code](https://github.com/poorna1995/evalution/blob/master/gsm8k/metric.ipynb)              | Presents grade-school math word problems to test multi-step mathematical reasoning.      |
+
+### Confusion Matrix:
+
+A confusion matrix is a visualization table that evaluates a classification model's performance by comparing predicted values with actual values.
+
+- The **rows** represent predicted values.
+- The **columns** represent actual values.
+
+![alt text](image-4.png)
+
+A typical confusion matrix has four main components:
+
+- **True Positives (TP):** Correctly predicted positive cases.  
+  _Example:_ 100 spam emails correctly identified out of 150 actual spam emails.
+
+- **True Negatives (TN):** Correctly predicted negative cases.  
+  _Example:_ 800 non-spam emails correctly identified out of 850 actual non-spam emails.
+
+- **False Positives (FP):** Incorrectly predicted positive cases. Also known as Type 1 Error.  
+  _Example:_ 50 non-spam emails incorrectly predicted as spam.
+
+- **False Negatives (FN):** Incorrectly predicted negative cases. Also known as Type 2 Error.  
+  _Example:_ 20 spam emails missed out of 150 actual spam emails.
+
+### Confusion Matrix Analysis:
+
+- **Diagonal Elements:**  
+  The diagonal elements represent the counts of correctly predicted samples for each class. For example, the value at position (0, 0) represents the count of samples correctly predicted as class 0. The higher the values on the diagonal, the better the model’s performance for those particular classes.
+
+- **Off-Diagonal Elements:**  
+  The off-diagonal elements represent the misclassifications made by the model. Each element at position (i, j) indicates the count of samples from class i misclassified as class j. Lower values for off-diagonal elements indicate fewer misclassifications.
+
+### Performance / Evaluation Metrics
+
+A confusion matrix helps calculate various performance metrics to evaluate a model's effectiveness:
+
+- **Accuracy:**  
+  Accuracy measures how many predictions the model got right. It is calculated by dividing the number of correct predictions by the total number of predictions. Accuracy is useful when the classes in the dataset are balanced (i.e., each class is equally represented).
+
+![alt text](image-5.png)
+
+---
+
+- **Precision:**  
+  Precision measures how accurately a model predicts the positive class.
+
+  **Precision** is important when **False Positives** are more concerning than False Negatives. For example, in medical diagnosis or spam detection, where incorrect positive predictions can have serious consequences.
+
+![alt text](image-6.png)
+
+---
+
+**Recall (Sensitivity / True Positive Rate):**  
+ Recall measures how many actual positive observations are correctly predicted as positive. It is also known as **Sensitivity** and is used when we want to capture as many positives as possible.
+
+**Recall** is crucial when **False Negatives** are more critical than **False Positives**. For example, in disease detection or fraud detection, where missing a positive case (false negative) can have serious consequences.
+
+![alt text](image-7.png)
+
+---
