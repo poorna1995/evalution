@@ -150,3 +150,19 @@ A confusion matrix helps calculate various performance metrics to evaluate a mod
 ![alt text](image-7.png)
 
 ---
+
+**F1-Score:**  
+ The F1-score is the harmonic mean of **precision** and **recall**, providing a balanced measure that combines both. It is useful when both precision and recall are equally important, especially in cases of class imbalance.
+
+The F1-score helps find a trade-off between precision and recall. If either precision or recall is low, the F1-score will also be low. Ideally, the F1-score should be as high as possible (close to 1).
+
+![alt text](image-8.png)
+
+Summary:
+
+- Accuracy is a better metric for Balanced Data.
+- Whenever False Positive is much more important use Precision.
+- Whenever False Negative is much more important use Recall.
+- F1-Score is used when the False Negatives and False Positives are important.
+- F1-Score is a better metric for Imbalanced Data.
+- The ideal value for Accuracy, Precision, Recall (Sensitivity), Specificity, F1
